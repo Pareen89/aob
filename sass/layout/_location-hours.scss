@@ -1,0 +1,48 @@
+.bg1 {
+  height: 100vh;
+  background-color: color(black);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.location {
+  color: color(white);
+  opacity: 0.9;
+  letter-spacing: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  &__title {
+    font-size: 3rem;
+    @include position(18%, 50%);
+  }
+  &__text {
+    font-size: 1rem;
+    @include position(36%, 50%);
+    text-align: center;
+    letter-spacing: 0.3rem;
+    &-address {
+      color: color(primary);
+    }
+    &-text {
+      color: color(white);
+    }
+  }
+}
+
+.space {
+  margin: 1.5rem 0rem;
+}
+
+#map {
+  @include position(79%, 50%);
+  height: 40%;
+  width: 50%;
+  border: 0.15rem solid color(primary);
+  border-radius: 0.2rem;
+  opacity: 0.5;
+}
+
+.position {
+  @include position(90%, 50%);
+}

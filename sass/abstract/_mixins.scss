@@ -1,0 +1,14 @@
+@mixin position ($x-position, $y-position) {
+    position: absolute;
+    top: $x-position;
+    left: $y-position;
+    transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

@@ -1,0 +1,152 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    // menu button on landing page
+    background-color: rgba(color(primary), 0.5);
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba(color(black), 0.1);
+    text-align: center;
+    cursor: pointer;
+  }
+  &__background {
+    // menu backgroun when open
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 2.5rem;
+    right: 2.5rem;
+    background-image: radial-gradient(color(primary), color(dark));
+    z-index: 1000; // transform: scale(100);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    left: -100%;
+    width: 0;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  &__image {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  &__list {
+    @include position(50%, 50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+  &__item {
+    margin: 2rem;
+  }
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      padding: 0 1rem;
+      font-size: 3rem;
+      font-weight: 300;
+      color: color(white);
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        rgba(color(white), 0.9) 50%
+      );
+      background-size: 220%;
+      transition: all 0.4s;
+    }
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: color(black);
+      transform: translateX(1rem);
+      box-shadow: 0 1rem 3rem rgba(color(black), 0.4);
+    }
+  }
+  &__checkbox:checked ~ &__background {
+    transform: scale(100);
+  }
+  &__checkbox:checked ~ &__nav {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+  } //ICON
+  &__icon {
+    position: relative;
+    margin-top: 2.5rem;
+    &,
+    &::before,
+    &::after {
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: color(black);
+      display: inline-block;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.5s;
+    }
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+  &__icons {
+    @include position(77%, 50%);
+  }
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+.logo {
+  @include position(6%, 6%);
+  position: fixed;
+  &__text a {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 0.4rem;
+    color: color(primary);
+    opacity: 0.5;
+    text-decoration: none;
+  }
+}

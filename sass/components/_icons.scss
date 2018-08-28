@@ -1,0 +1,38 @@
+.fab {
+  color: color(primary);
+  margin-right: 0.5rem;
+}
+
+.fa {
+  &-facebook-square:hover {
+    color: #3b5998;
+    background: #fff;
+  }
+  &-twitter-square:hover {
+    color: #0084b4;
+    background: #fff;
+  }
+  &-instagram:hover {
+    color: #000;
+    background: #f09433;
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+  }
+  &-yelp:hover {
+    color: #d32323;
+    background: #fff;
+  }
+}
+
+// <div class="navigation__icons"> //     <i class="fab fa-facebook-square fa-3x"></i>
+//     <i class="fab fa-twitter-square fa-3x"></i>
+//     <i class="fab fa-instagram fa-3x"></i>
+//     <i class="fab fa-yelp fa-3x"></i>
+// </div>
